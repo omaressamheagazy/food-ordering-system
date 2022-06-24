@@ -4,6 +4,7 @@
 include("connection/connect.php");  //include connection file
 error_reporting(0);  // using to hide undefine undex errors
 session_start(); //start temp session until logout/browser closed
+include "init.php";
 
 ?>
 
@@ -17,12 +18,12 @@ session_start(); //start temp session until logout/browser closed
     <link rel="icon" href="#">
     <title>Online ordering system</title>
     <!-- Bootstrap core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/font-awesome.min.css" rel="stylesheet">
-    <link href="css/animsition.min.css" rel="stylesheet">
-    <link href="css/animate.css" rel="stylesheet">
+    <link href="<?php echo $css ?>bootstrap.min.css" rel="stylesheet">
+    <link href="<?php echo $css ?>font-awesome.min.css" rel="stylesheet">
+    <link href="<?php echo $css ?>animsition.min.css" rel="stylesheet">
+    <link href="<?php echo $css ?>animate.css" rel="stylesheet">
     <!-- Custom styles for this template -->
-    <link href="css/style.css" rel="stylesheet">
+    <link href="<?php echo $css ?>style.css" rel="stylesheet">
 </head>
 
 <body class="home">
@@ -184,7 +185,7 @@ session_start(); //start temp session until logout/browser closed
                                         </g>
                                     </svg>
                                 </div>
-                                
+
                                 <h3>Choose the menu</h3>
                                 <p>You will find different delicious food with us</p>
                             </div>
