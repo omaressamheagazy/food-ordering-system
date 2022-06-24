@@ -10,3 +10,4 @@ $tpl = "template/";
 // include all the important files
 
 include "{$tpl}header.php";
+include "{$tpl}navbar.php";
