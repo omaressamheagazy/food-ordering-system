@@ -151,7 +151,7 @@ hr {
 }
 
 .custom-radio .custom-control-input:checked~.custom-control-indicator {
-    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns="http: //www.w3.org/2000/svg" viewBox="0 0 8 8"%3E%3Cpath fill="%23fff" d="M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z"/%3E%3C/svg%3E")
+    /* background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 8 8"%3E%3Cpath fill="%23fff" d="M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z"/%3E%3C/svg%3E"); */
 }
 
 .custom-control-input:active~.custom-control-indicator {
@@ -165,7 +165,7 @@ hr {
 }
 
 .custom-control-input:disabled~.custom-control-description {
-    color: #76767
+    color: #7676
 }
 
 .custom-control {
@@ -835,9 +835,9 @@ hr {
     float: left;
 }
 
-@media (max-width: 543px) {
+/* @media (max-width: 543px) {
     ...
-}
+} */
 
 @media (min-width: 544px) and (max-width: 767px) {
     .food-item-wrap .right-text {
@@ -896,9 +896,9 @@ hr {
     }
 }
 
-@media (min-width: 1200px) {
+/* @media (min-width: 1200px) {
     ...
-}
+} */
 
 
 /*============================================
