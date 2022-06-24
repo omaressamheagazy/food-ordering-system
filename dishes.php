@@ -10,25 +10,6 @@ include_once 'product-action.php'; //including controller
 ?>
 
 
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="icon" href="#">
-    <title>Starter Template for Bootstrap</title>
-    <!-- Bootstrap core CSS -->
-    <link href="<?php echo $css ?>bootstrap.min.css" rel="stylesheet">
-    <link href="<?php echo $css ?>font-awesome.min.css" rel="stylesheet">
-    <link href="<?php echo $css ?>animsition.min.css" rel="stylesheet">
-    <link href="<?php echo $css ?>animate.css" rel="stylesheet">
-    <!-- Custom styles for this template -->
-    <link href="<?php echo $css ?>style.css" rel="stylesheet">
-
-<body>
-
     <!--header starts-->
     <header id="header" class="header-scroll top-header headrom">
         <!-- .navbar -->
