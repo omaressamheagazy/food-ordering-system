@@ -6,5 +6,4 @@
     $js = "layout/js/";
 
 // include all the important files
-
 include "{$tpl}header.php";
