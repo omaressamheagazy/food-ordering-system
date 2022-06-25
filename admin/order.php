@@ -45,7 +45,6 @@ if ($do == "order") {
                             <div class="card">
                                 <div class="card-body">
                                     <h4 class="card-title">View user Orders</h4>
-
                                     <div class="table-responsive m-t-20">
                                         <table id="myTable" class="table table-bordered table-striped">
 
@@ -157,7 +156,9 @@ if ($do == "order") {
     <?php
 
     echo "delete this";
-} elseif ($d0 = "view") {
-    echo "view";
+} elseif ($d0 = "delete") {
+    mysqli_query($db, "DELETE FROM users_orders WHERE o_id = '" . $_GET['order_del'] . "'");
+    header("location:all_orders.php");  
+
 }
     ?>
