@@ -2,7 +2,9 @@
 <html lang="en">
 <?php
 include("../connection/connect.php");
-error_reporting(0);
+//error_reporting(0);
+$error = null;
+$success = null;
 session_start();
 
 
@@ -10,13 +12,6 @@ session_start();
 
 if (isset($_POST['submit']))           //if upload btn is pressed
 {
-
-
-
-
-
-
-
     if (empty($_POST['d_name']) || empty($_POST['about']) || $_POST['price'] == '' || $_POST['res_name'] == '') {
         $error =     '<div class="alert alert-danger alert-dismissible fade show">
 																<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>

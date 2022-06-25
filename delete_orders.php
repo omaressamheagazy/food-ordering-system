@@ -1,6 +1,6 @@
 <?php
 include("connection/connect.php"); //connection to db
-error_reporting(0);
+//error_reporting(0);
 session_start();
 
 

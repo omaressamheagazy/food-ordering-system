@@ -2,7 +2,9 @@
 <html lang="en">
 <?php
 include("../connection/connect.php");
-error_reporting(0);
+$error  = null;
+$success  = null;
+//error_reporting(0);
 session_start();
 
 

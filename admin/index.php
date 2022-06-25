@@ -2,7 +2,9 @@
 <html lang="en">
 <?php
 include("../connection/connect.php");
-error_reporting(0);
+//error_reporting(0);
+$message = null;
+$success = null;
 session_start();
 if (isset($_POST['submit'])) {
 	$username = $_POST['username'];
@@ -116,16 +118,8 @@ if (isset($_POST['submit1'])) {
 			<input type="submit" name="submit" value="login" />
 			<p class="message">Not registered? <a href="#">Create an account</a></p>
 		</form>
-
 	</div>
-
 	<script src='js/index.js'></script>
-
-
-
-
-
-
 </body>
 
 </html>

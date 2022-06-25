@@ -3,7 +3,7 @@
 <?php
 
 session_start(); //temp session
-error_reporting(0); // hide undefine index
+//error_reporting(0); // hide undefine index
 include("connection/connect.php"); // connection
 if(isset($_POST['submit'] )) //if submit btn is pressed
 {

@@ -4,7 +4,7 @@
 
 
 session_start();
-error_reporting(0);
+//error_reporting(0);
 include("../connection/connect.php");
 
 if (isset($_POST['submit'])) {

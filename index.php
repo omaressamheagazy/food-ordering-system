@@ -2,7 +2,7 @@
 <html lang="en">
 <?php
 include("connection/connect.php");  //include connection file
-error_reporting(0);  // using to hide undefine undex errors
+//error_reporting(0);  // using to hide undefine undex errors
 session_start(); //start temp session until logout/browser closed
 include "init.php";
 
