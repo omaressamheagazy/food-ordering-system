@@ -96,7 +96,6 @@ if(isset($_POST['submit1'] ))
   <meta charset="UTF-8">
   <title>Flat Login Form</title>
   
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
 
   <link rel='stylesheet prefetch' href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900'>
 <link rel='stylesheet prefetch' href='https://fonts.googleapis.com/css?family=Montserrat:400,700'>
@@ -139,7 +138,6 @@ if(isset($_POST['submit1'] ))
   
 </div>
 
-  <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
   <script src='js/index.js'></script>
   
 

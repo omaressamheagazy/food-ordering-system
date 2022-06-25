@@ -76,7 +76,7 @@ include "init.php";
 
                                                         <tr>
                                                             <td>Cart Subtotal</td>
-                                                            <td> <?php echo "$" . $item_total; ?></td>
+                                                            <td> <?php echo "RM" . $item_total; ?></td>
                                                         </tr>
                                                         <tr>
                                                             <td>Shipping &amp; Handling</td>
@@ -84,7 +84,7 @@ include "init.php";
                                                         </tr>
                                                         <tr>
                                                             <td class="text-color"><strong>Total</strong></td>
-                                                            <td class="text-color"><strong> <?php echo "$" . $item_total; ?></strong></td>
+                                                            <td class="text-color"><strong> <?php echo "RM" . $item_total; ?></strong></td>
                                                         </tr>
                                                     </tbody>
 
