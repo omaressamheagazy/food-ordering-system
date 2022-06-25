@@ -42,7 +42,6 @@ include_once 'product-action.php'; //including controller
                     <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 profile-desc">
                         <div class="pull-left right-text white-txt">
                             <h6><a href="#"><?php echo $rows['title']; ?></a></h6>
-                            <p><?php echo $rows['address']; ?></p>
                             <ul class="nav nav-inline">
                                 <li class="nav-item"> <a class="nav-link active" href="#"><i class="fa fa-check"></i> Min $ 10,00</a> </li>
                                 <li class="nav-item"> <a class="nav-link" href="#"><i class="fa fa-motorcycle"></i> 30 min</a> </li>

@@ -6,8 +6,6 @@ session_start();
 include "init.php";
 
 ?>
-
-
 <body class="fix-header fix-sidebar">
     <!-- Preloader - style you can find in spinners.css -->
     <div class="preloader">
@@ -28,7 +26,6 @@ include "init.php";
                 <div class="col-md-5 align-self-center">
                     <h3 class="text-primary">Dashboard</h3>
                 </div>
-
             </div>
             <!-- End Bread crumb -->
             <!-- Container fluid  -->
@@ -36,8 +33,6 @@ include "init.php";
                 <!-- Start Page Content -->
                 <div class="row">
                     <div class="col-12">
-
-
                         <div class="card">
                             <div class="card-body">
                                 <h4 class="card-title">All Registered users</h4>
@@ -58,8 +53,6 @@ include "init.php";
                                             </tr>
                                         </thead>
                                         <tbody>
-
-
                                             <?php
                                             $sql = "SELECT * FROM users order by u_id desc";
                                             $query = mysqli_query($db, $sql);
@@ -68,9 +61,6 @@ include "init.php";
                                                 echo '<td colspan="7"><center>No User-Data!</center></td>';
                                             } else {
                                                 while ($rows = mysqli_fetch_array($query)) {
-
-
-
                                                     echo ' <tr><td>' . $rows['username'] . '</td>
 																								<td>' . $rows['f_name'] . '</td>
 																								<td>' . $rows['l_name'] . '</td>
@@ -78,17 +68,12 @@ include "init.php";
 																								<td>' . $rows['phone'] . '</td>
 																								<td>' . $rows['address'] . '</td>																								
 																								<td>' . $rows['date'] . '</td>
-																									 <td><a href="delete_users.php?user_del=' . $rows['u_id'] . '" class="btn btn-danger btn-flat btn-addon btn-xs m-b-10"><i class="fa fa-trash-o" style="font-size:16px"></i></a> 
-																									 <a href="update_users.php?user_upd=' . $rows['u_id'] . '" " class="btn btn-info btn-flat btn-addon btn-sm m-b-10 m-l-5"><i class="ti-settings"></i></a>
+																									<td><a href="delete_users.php?user_del=' . $rows['u_id'] . '" class="btn btn-danger btn-flat btn-addon btn-xs m-b-10"><i class="fa fa-trash-o" style="font-size:16px"></i></a> 
+																									<a href="update_users.php?user_upd=' . $rows['u_id'] . '" " class="btn btn-info btn-flat btn-addon btn-sm m-b-10 m-l-5"><i class="ti-settings"></i></a>
 																									</td></tr>';
                                                 }
                                             }
-
-
                                             ?>
-
-
-
                                         </tbody>
                                     </table>
                                 </div>
@@ -108,36 +93,4 @@ include "init.php";
 
 
     <!-- footer -->
-    <footer class="footer"> © 2018 All rights reserved. Template designed by <a href="https://colorlib.com">Colorlib</a></footer>
-    <!-- End footer -->
-    </div>
-    <!-- End Page wrapper  -->
-    </div>
-    <!-- End Wrapper -->
-    <!-- All Jquery -->
-    <script src="js/lib/jquery/jquery.min.js"></script>
-    <!-- Bootstrap tether Core JavaScript -->
-    <script src="js/lib/bootstrap/js/popper.min.js"></script>
-    <script src="js/lib/bootstrap/js/bootstrap.min.js"></script>
-    <!-- slimscrollbar scrollbar JavaScript -->
-    <script src="js/jquery.slimscroll.js"></script>
-    <!--Menu sidebar -->
-    <script src="js/sidebarmenu.js"></script>
-    <!--stickey kit -->
-    <script src="js/lib/sticky-kit-master/dist/sticky-kit.min.js"></script>
-    <!--Custom JavaScript -->
-    <script src="js/custom.min.js"></script>
-
-
-    <script src="js/lib/datatables/datatables.min.js"></script>
-    <script src="js/lib/datatables/cdn.datatables.net/buttons/1.2.2/js/dataTables.buttons.min.js"></script>
-    <script src="js/lib/datatables/cdn.datatables.net/buttons/1.2.2/js/buttons.flash.min.js"></script>
-    <script src="js/lib/datatables/cdnjs.cloudflare.com/ajax/libs/jszip/2.5.0/jszip.min.js"></script>
-    <script src="js/lib/datatables/cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/pdfmake.min.js"></script>
-    <script src="js/lib/datatables/cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/vfs_fonts.js"></script>
-    <script src="js/lib/datatables/cdn.datatables.net/buttons/1.2.2/js/buttons.html5.min.js"></script>
-    <script src="js/lib/datatables/cdn.datatables.net/buttons/1.2.2/js/buttons.print.min.js"></script>
-    <script src="js/lib/datatables/datatables-init.js"></script>
-</body>
-
-</html>
+    <?php include "{$tpl}footer.php" ?>

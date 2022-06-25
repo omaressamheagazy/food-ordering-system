@@ -114,7 +114,7 @@ include "init.php";
                 <div class="col-lg-12">
                     <div class="card card-outline-primary">
                         <div class="card-header">
-                            <h4 class="m-b-0 text-white">Add Menu to Restaurant</h4>
+                            <h4 class="m-b-0 text-white">Add Dish to Menu</h4>
                         </div>
                         <div class="card-body">
                             <form action='' method='post' enctype="multipart/form-data">
@@ -157,18 +157,11 @@ include "init.php";
 
                                     <!--/span-->
                                     <div class="row">
-
-
-
-
-
-
-
                                         <div class="col-md-12">
                                             <div class="form-group">
                                                 <label class="control-label">Select Category</label>
                                                 <select name="res_name" class="form-control custom-select" data-placeholder="Choose a Category" tabindex="1">
-                                                    <option>--Select Restaurant--</option>
+                                                    <option>--Select Category--</option>
                                                     <?php $ssql = "select * from restaurant";
                                                     $res = mysqli_query($db, $ssql);
                                                     while ($row = mysqli_fetch_array($res)) {
@@ -179,11 +172,7 @@ include "init.php";
                                                 </select>
                                             </div>
                                         </div>
-
-
-
                                     </div>
-
                                 </div>
                         </div>
                         <div class="form-actions">

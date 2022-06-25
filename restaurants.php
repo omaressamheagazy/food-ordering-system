@@ -3,8 +3,8 @@
 <?php
 include("connection/connect.php");
 include "init.php";
-$error  = null;
-$success  = null;
+$error = null;
+$success = null;
 // error_reporting(0);
 session_start();
 ?>
@@ -86,34 +86,29 @@ session_start();
                             <div class="row">
                                 <?php $ress = mysqli_query($db, "select * from restaurant");
                                 while ($rows = mysqli_fetch_array($ress)) {
+                                ?>
 
-
-                                    echo ' <div class="col-sm-12 col-md-12 col-lg-8 text-xs-center text-sm-left">
-															<div class="entry-logo">
-																<a class="img-fluid" href="dishes.php?res_id=' . $rows['rs_id'] . '" > <img src="admin/Res_img/' . $rows['image'] . '" alt="Food logo"></a>
-															</div>
-															<!-- end:Logo -->
-															<div class="entry-dscr">
-																<h5><a href="dishes.php?res_id=' . $rows['rs_id'] . '" >' . $rows['title'] . '</a></h5> <span>' . $rows['address'] . ' <a href="#">...</a></span>
-																<ul class="list-inline">
-																	<li class="list-inline-item"><i class="fa fa-check"></i> Min $ 10,00</li>
-																	<li class="list-inline-item"><i class="fa fa-motorcycle"></i> 30 min</li>
-																</ul>
-															</div>
-															<!-- end:Entry description -->
-														</div>
-														
-														 <div class="col-sm-12 col-md-12 col-lg-4 text-xs-center">
-																<div class="right-content bg-white">
-																	<div class="right-review">
-																		<div class="rating-block"> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star-o"></i> </div>
-																		<p> 245 Reviews</p> <a href="dishes.php?res_id=' . $rows['rs_id'] . '" class="btn theme-btn-dash">View Menu</a> </div>
-																</div>
-																<!-- end:right info -->
-															</div>';
+                                    <div class="col-sm-12 col-md-12 col-lg-8 text-xs-center text-sm-left">
+                                        <div class="entry-logo">
+                                            <a class="img-fluid" href="dishes.php?res_id=<?php echo $rows['rs_id'] ?>"> <img src="admin/Res_img/<?php echo $rows['image'] ?>" alt="Food logo"></a>
+                                        </div>
+                                        <!-- end:Logo -->
+                                        <div class="entry-dscr">
+                                            <h5><a href="dishes.php?res_id=<?php echo $rows['rs_id'] ?>"><?php echo $rows['title'] ?></a></h5> <span>
+                                        </div>
+                                        <!-- end:Entry description -->
+                                    </div>
+                                    <div class="col-sm-12 col-md-12 col-lg-4 text-xs-center">
+                                        <div class="right-content bg-white">
+                                            <div class="right-review">
+                                            <br>
+                                                <a href="dishes.php?res_id=<?php echo $rows['rs_id'] ?>" class="btn theme-btn-dash">View <?php echo $rows['title'] ?></a>
+                                            </div>
+                                        </div>
+                                        <!-- end:right info -->
+                                    </div>
+                                <?php
                                 }
-
-
                                 ?>
 
                             </div>
