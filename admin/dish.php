@@ -8,7 +8,6 @@ include "init.php";
 
 $do =  isset($_GET["do"]) ? $_GET["do"] : "dish";
 
-echo $do;
 
 if ($do == "dish") {
 ?>
