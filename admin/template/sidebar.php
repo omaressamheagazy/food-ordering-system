@@ -29,8 +29,8 @@
                 </li>
                 <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-cutlery" aria-hidden="true"></i><span class="hide-menu">Menu</span></a>
                     <ul aria-expanded="false" class="collapse">
-                        <li><a href="all_menu.php">All Dishes</a></li>
-                        <li><a href="add_menu.php">Add Dish</a></li>
+                        <li><a href="dish.php?do=dish">All Dishes</a></li>
+                        <li><a href="dish.php?do=add">Add Dish</a></li>
 
 
                     </ul>
