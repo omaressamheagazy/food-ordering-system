@@ -13,6 +13,7 @@
     <!-- Custom CSS -->
     <link href="<?Php echo $css ?>helper.css" rel="stylesheet">
     <link href="<?Php echo $css ?>style.css" rel="stylesheet">
+    <link href="<?Php echo $css ?>update_order.css" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
