@@ -6,7 +6,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" href="#">
-    <title>Starter Template for Bootstrap</title>
+    <title>Nasi kurabu</title>
     <!-- Bootstrap core CSS -->
     <link href="<?php echo $css ?>bootstrap.min.css" rel="stylesheet">
     <link href="<?php echo $css ?>font-awesome.min.css" rel="stylesheet">

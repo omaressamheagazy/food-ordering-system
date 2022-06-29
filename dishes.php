@@ -35,13 +35,13 @@ include_once 'product-action.php'; //including controller
                 <div class="row">
                     <div class="col-xs-12 col-sm-12  col-md-4 col-lg-4 profile-img">
                         <div class="image-wrap">
-                            <figure><?php echo '<img src="admin/Res_img/' . $rows['image'] . '" alt="Restaurant logo">'; ?></figure>
+                            <!-- <figure><?php echo '<img src="admin/Res_img/' . $rows['image'] . '" alt="Restaurant logo">'; ?></figure> -->
                         </div>
                     </div>
 
                     <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 profile-desc">
                         <div class="pull-left right-text white-txt">
-                            <h6><a href="#"><?php echo $rows['title']; ?></a></h6>
+                            <!-- <h6><a href="#"><?php echo $rows['title']; ?></a></h6> -->
                             <ul class="nav nav-inline">
                                 <li class="nav-item"> <a class="nav-link active" href="#"><i class="fa fa-check"></i> Min $ 10,00</a> </li>
                                 <li class="nav-item"> <a class="nav-link" href="#"><i class="fa fa-motorcycle"></i> 30 min</a> </li>
@@ -89,29 +89,31 @@ include_once 'product-action.php'; //including controller
                             <?php
 
                             $item_total = 0;
+                            if(isset($_SESSION["cart_item"])) {
 
-                            foreach ($_SESSION["cart_item"] as $item)  // fetch items define current into session ID
-                            {
-                            ?>
-
-                                <div class="title-row">
-                                    <?php echo $item["title"]; ?><a href="dishes.php?res_id=<?php echo $_GET['res_id']; ?>&action=remove&id=<?php echo $item["d_id"]; ?>">
-                                        <i class="fa fa-trash pull-right"></i></a>
-                                </div>
-
-                                <div class="form-group row no-gutter">
-                                    <div class="col-xs-8">
-                                        <input type="text" class="form-control b-r-0" value=<?php echo "RM" . $item["price"]; ?> readonly id="exampleSelect1">
-
+                                foreach ($_SESSION["cart_item"] as $item)  // fetch items define current into session ID
+                                {
+                                ?>
+    
+                                    <div class="title-row">
+                                        <?php echo $item["title"]; ?><a href="dishes.php?res_id=<?php echo $_GET['res_id']; ?>&action=remove&id=<?php echo $item["d_id"]; ?>">
+                                            <i class="fa fa-trash pull-right"></i></a>
                                     </div>
-                                    <div class="col-xs-4">
-                                        <input class="form-control" type="text" readonly value='<?php echo $item["quantity"]; ?>' id="example-number-input">
+    
+                                    <div class="form-group row no-gutter">
+                                        <div class="col-xs-8">
+                                            <input type="text" class="form-control b-r-0" value=<?php echo "RM" . $item["price"]; ?> readonly id="exampleSelect1">
+    
+                                        </div>
+                                        <div class="col-xs-4">
+                                            <input class="form-control" type="text" readonly value='<?php echo $item["quantity"]; ?>' id="example-number-input">
+                                        </div>
+    
                                     </div>
-
-                                </div>
-
-                            <?php
-                                $item_total += ($item["price"] * $item["quantity"]); // calculating current price into cart
+    
+                                <?php
+                                    $item_total += ($item["price"] * $item["quantity"]); // calculating current price into cart
+                                }
                             }
                             ?>
 

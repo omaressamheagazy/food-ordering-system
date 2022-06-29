@@ -376,6 +376,6 @@ include "init.php";
         <?php include "{$tpl}footer.php";
 } else if($do == "delete") {
     mysqli_query($db, "DELETE FROM restaurant WHERE rs_id = '" . $_GET['res_del'] . "'");
-    header("location:allrestraunt.php");  
+    header("location:cateogry.php?do=category");  
 }
 ?>

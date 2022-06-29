@@ -7,7 +7,7 @@
     <meta name="author" content="">
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="images/nasiIcon.png">
-    <title>Ela - Bootstrap Admin Dashboard Template</title>
+    <title>Nasi Kurabu</title>
     <!-- Bootstrap Core CSS -->
     <link href="<?Php echo $css ?>lib/bootstrap/bootstrap.min.css" rel="stylesheet">
     <!-- Custom CSS -->

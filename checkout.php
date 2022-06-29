@@ -22,7 +22,7 @@ $success = null;
 
             if (isset($_POST['submit'])) {
 
-                $SQL = "insert into users_orders(u_id,title,quantity,price) values('" . $_SESSION["user_id"] . "','" . $item["title"] . "','" . $item["quantity"] . "','" . $item["price"] . "')";
+                $SQL = "insert into users_orders(u_id,title,quantity,price) values('" . $_SESSION["user_id"] . "','" . $item["title"] . "','" . $item["quantity"] . "','" . $item["price"] * $item["quantity"] . "')";
 
                 mysqli_query($db, $SQL);
 

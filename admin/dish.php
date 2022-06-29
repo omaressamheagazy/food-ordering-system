@@ -7,8 +7,8 @@ session_start();
 include "init.php";
 
 $do =  isset($_GET["do"]) ? $_GET["do"] : "dish";
-
-
+$error = null;
+$success = null;        
 if ($do == "dish") {
 ?>
 
@@ -247,7 +247,7 @@ if ($do == "dish") {
                                                     <div class="form-group">
                                                         <label class="control-label">Select Category</label>
                                                         <select name="res_name" class="form-control custom-select" data-placeholder="Choose a Category" tabindex="1">
-                                                            <option>--Select Restaurant--</option>
+                                                            <option>--Select Category--</option>
                                                             <?php $ssql = "select * from restaurant";
                                                             $res = mysqli_query($db, $ssql);
                                                             while ($row = mysqli_fetch_array($res)) {

@@ -4,7 +4,6 @@
 include("../connection/connect.php");
 session_start();
 include "init.php";
-include "{$tpl}header.php";
 
 $do =  isset($_GET["do"]) ? $_GET["do"] : "order";
 if ($do == "order") {
