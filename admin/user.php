@@ -46,18 +46,15 @@ if ($do == "users") {
                                             <thead>
                                                 <tr>
                                                     <th>Username</th>
-                                                    <th>First-Name</th>
-                                                    <th>Last-Name</th>
+                                                    <th>Full Name</th>
                                                     <th>Email</th>
-                                                    <th>Phone</th>
-                                                    <th>Address</th>
                                                     <th>Reg-Date</th>
                                                     <th>Action</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
                                                 <?php
-                                                $sql = "SELECT * FROM users order by u_id desc";
+                                                $sql = "SELECT * FROM admin order by adm_id";
                                                 $query = mysqli_query($db, $sql);
 
                                                 if (!mysqli_num_rows($query) > 0) {
@@ -65,14 +62,11 @@ if ($do == "users") {
                                                 } else {
                                                     while ($rows = mysqli_fetch_array($query)) {
                                                         echo ' <tr><td>' . $rows['username'] . '</td>
-																								<td>' . $rows['f_name'] . '</td>
-																								<td>' . $rows['l_name'] . '</td>
+																								<td>' . $rows['FullName'] . '</td>
 																								<td>' . $rows['email'] . '</td>
-																								<td>' . $rows['phone'] . '</td>
-																								<td>' . $rows['address'] . '</td>																								
 																								<td>' . $rows['date'] . '</td>
-																									<td><a href="user.php?do=delete&user_del=' . $rows['u_id'] . '" class="btn btn-danger btn-flat btn-addon btn-xs m-b-10"><i class="fa fa-trash-o" style="font-size:16px"></i></a> 
-																									<a href="user.php?do=update&user_upd=' . $rows['u_id'] . '" " class="btn btn-info btn-flat btn-addon btn-sm m-b-10 m-l-5"><i class="ti-settings"></i></a>
+																									<td><a href="user.php?do=delete&user_del=' . $rows['adm_id'] . '" class="btn btn-danger btn-flat btn-addon btn-xs m-b-10"><i class="fa fa-trash-o" style="font-size:16px"></i></a> 
+																									<a href="user.php?do=update&user_upd=' . $rows['adm_id'] . '" " class="btn btn-info btn-flat btn-addon btn-sm m-b-10 m-l-5"><i class="ti-settings"></i></a>
 																									</td></tr>';
                                                     }
                                                 }
@@ -101,23 +95,22 @@ if ($do == "users") {
                 <div>All fields are requiredS</div>
         <?php
             } else {
-            $sql = "SELECT  username FROM admin WHERE username='{$_POST["Uname"]}' limit 1";
-            $query = mysqli_query($db, $sql);
-            // check if the entered username is used before in the database or not
-            $isUserNameExist = mysqli_num_rows($query);
-            if(!$isUserNameExist)  {
-                $SQL = "insert into admin(FullName,username,password,email) values('" . $_POST["Fname"] . "','" . $_POST["Uname"] . "','" . $_POST["password"] . "','" . $_POST["email"]. "')";
-                mysqli_query($db, $SQL);
-                $success =     '<div class="alert alert-success alert-dismissible fade show">
+                $sql = "SELECT  username FROM admin WHERE username='{$_POST["Uname"]}' limit 1";
+                $query = mysqli_query($db, $sql);
+                // check if the entered username is used before in the database or not
+                $isUserNameExist = mysqli_num_rows($query);
+                if (!$isUserNameExist) {
+                    $SQL = "insert into admin(FullName,username,password,email) values('" . $_POST["Fname"] . "','" . $_POST["Uname"] . "','" . $_POST["password"] . "','" . $_POST["email"] . "')";
+                    mysqli_query($db, $SQL);
+                    $success =     '<div class="alert alert-success alert-dismissible fade show">
 																<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 																<strong>succefully registered!</strong></div>';
-            } else {
-                $error = '<div class="alert alert-danger alert-dismissible fade show">
+                } else {
+                    $error = '<div class="alert alert-danger alert-dismissible fade show">
 																<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 																<strong>invalid username!</strong>
 															</div>';
-            }
-
+                }
             }
         }
         ?>
@@ -152,7 +145,7 @@ if ($do == "users") {
                         <div class="row">
                             <div class="container-fluid">
                                 <!-- Start Page Content -->
-                                <?php 
+                                <?php
                                 echo $error;
                                 echo $success; ?>
                                 <div class="col-lg-12">
@@ -228,34 +221,32 @@ if ($do == "users") {
                     if (
                         empty($_POST['uname']) ||
                         empty($_POST['fname']) ||
-                        empty($_POST['lname']) ||
-                        empty($_POST['email']) ||
-                        empty($_POST['password']) ||
-                        empty($_POST['phone'])
+                        empty($_POST['email'])
                     ) {
                         $error = '<div class="alert alert-danger alert-dismissible fade show">
 																<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 																<strong>All fields Required!</strong>
 															</div>';
                     } else {
-                        if (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) // Validate email address
+                        $sql = "SELECT  username, adm_id FROM admin WHERE username='{$_POST["uname"]}' limit 1";
+                        $query = mysqli_query($db, $sql);
+                        // check if the entered username is used before in the database or not
+                        $rows = mysqli_fetch_array($query);
+                        $isUserNameExist = (mysqli_num_rows($query) > 0) &&  ($rows['adm_id'] != $_GET["user_upd"]) ? true : false; 
+                        if ($isUserNameExist) {
+                            $error = '<div class="alert alert-danger alert-dismissible fade show">
+																<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+																<strong>Username already exist!</strong>
+                                                                <strogn></strogn>
+															</div>';
+                        } else if (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) // Validate email address
                         {
                             $error = '<div class="alert alert-danger alert-dismissible fade show">
 																<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 																<strong>invalid email!</strong>
 															</div>';
-                        } elseif (strlen($_POST['password']) < 6) {
-                            $error = '<div class="alert alert-danger alert-dismissible fade show">
-																<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-																<strong>Password must be >=6!</strong>
-															</div>';
-                        } elseif (strlen($_POST['phone']) < 10) {
-                            $error = '<div class="alert alert-danger alert-dismissible fade show">
-																<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-																<strong>invalid phone!</strong>
-															</div>';
                         } else {
-                            $mql = "update users set username='$_POST[uname]', f_name='$_POST[fname]', l_name='$_POST[lname]',email='$_POST[email]',phone='$_POST[phone]',password='" . md5($_POST["password"]) . "' where u_id='$_GET[user_upd]' ";
+                            $mql = "update admin set username='$_POST[uname]', FullName='$_POST[fname]', email='$_POST[email]',password='"  . "' where adm_id='$_GET[user_upd]' ";
                             mysqli_query($db, $mql);
                             $success =     '<div class="alert alert-success alert-dismissible fade show">
 																<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
@@ -307,10 +298,10 @@ if ($do == "users") {
                                                         <h4 class="m-b-0 text-white">Update Users</h4>
                                                     </div>
                                                     <div class="card-body">
-                                                        <?php $ssql = "select * from users where u_id='$_GET[user_upd]'";
+                                                        <?php $ssql = "select * from admin where adm_id='$_GET[user_upd]'";
                                                         $res = mysqli_query($db, $ssql);
                                                         $newrow = mysqli_fetch_array($res); ?>
-                                                        <form action='' method='postS'>
+                                                        <form action='?do=update&user_upd=<?php echo $newrow["adm_id"]?>' method='post'>
                                                             <div class="form-body">
 
                                                                 <hr>
@@ -322,20 +313,14 @@ if ($do == "users") {
                                                                         </div>
                                                                     </div>
                                                                     <!--/span-->
-                                                                    <div class="col-md-6">
-                                                                        <div class="form-group has-danger">
-                                                                            <label class="control-label">First-Name</label>
-                                                                            <input type="text" name="fname" class="form-control form-control-danger" value="<?php echo $newrow['f_name'];  ?>" placeholder="jon">
-                                                                        </div>
-                                                                    </div>
                                                                     <!--/span-->
                                                                 </div>
                                                                 <!--/row-->
                                                                 <div class="row p-t-20">
                                                                     <div class="col-md-6">
                                                                         <div class="form-group">
-                                                                            <label class="control-label">Last-Name </label>
-                                                                            <input type="text" name="lname" class="form-control" placeholder="doe" value="<?php echo $newrow['l_name']; ?>">
+                                                                            <label class="control-label">Full Name </label>
+                                                                            <input type="text" name="fname" class="form-control" placeholder="doe" value="<?php echo $newrow['FullName']; ?>">
                                                                         </div>
                                                                     </div>
                                                                     <!--/span-->
@@ -348,21 +333,6 @@ if ($do == "users") {
                                                                     <!--/span-->
                                                                 </div>
                                                                 <!--/row-->
-                                                                <div class="row">
-                                                                    <div class="col-md-6">
-                                                                        <div class="form-group">
-                                                                            <label class="control-label">Password</label>
-                                                                            <input type="text" name="password" class="form-control form-control-danger" value="<?php echo $newrow['password'];  ?>" placeholder="password">
-                                                                        </div>
-                                                                    </div>
-
-                                                                    <div class="col-md-6">
-                                                                        <div class="form-group">
-                                                                            <label class="control-label">Phone</label>
-                                                                            <input type="text" name="phone" class="form-control form-control-danger" value="<?php echo $newrow['phone'];  ?>" placeholder="phone">
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
                                                                 <!--/span-->
                                                                 <!--/span-->
                                                             </div>
