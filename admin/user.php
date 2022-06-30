@@ -92,9 +92,36 @@ if ($do == "users") {
         </div>
         <!-- End Container fluid  -->
         <!-- footer -->
-    <?php include "{$tpl}footer.php";
-} else if ($do == "add") {
-    ?>
+        <?php include "{$tpl}footer.php";
+    } else if ($do == "add") {
+
+        if (isset($_POST["submit"])) {
+            if (empty($_POST["Uname"]) || empty($_POST["Fname"]) || empty($_POST["email"]) || empty($_POST["password"])) {
+        ?>
+                <div>All fields are requiredS</div>
+        <?php
+            } else {
+            $sql = "SELECT  username FROM admin WHERE username='{$_POST["Uname"]}' limit 1";
+            $query = mysqli_query($db, $sql);
+            // check if the entered username is used before in the database or not
+            $isUserNameExist = mysqli_num_rows($query);
+            if(!$isUserNameExist)  {
+                $SQL = "insert into admin(FullName,username,password,email) values('" . $_POST["Fname"] . "','" . $_POST["Uname"] . "','" . $_POST["password"] . "','" . $_POST["email"]. "')";
+                mysqli_query($db, $SQL);
+                $success =     '<div class="alert alert-success alert-dismissible fade show">
+																<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+																<strong>succefully registered!</strong></div>';
+            } else {
+                $error = '<div class="alert alert-danger alert-dismissible fade show">
+																<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+																<strong>invalid username!</strong>
+															</div>';
+            }
+
+            }
+        }
+        ?>
+
         <body class="fix-header">
             <!-- Preloader - style you can find in spinners.css -->
             <div class="preloader">
@@ -125,13 +152,13 @@ if ($do == "users") {
                         <div class="row">
                             <div class="container-fluid">
                                 <!-- Start Page Content -->
-                                <?php echo var_dump($_POST);
+                                <?php 
                                 echo $error;
                                 echo $success; ?>
                                 <div class="col-lg-12">
                                     <div class="card card-outline-primary">
                                         <div class="card-header">
-                                            <h4 class="m-b-0 text-white">Add Users</h4>
+                                            <h4 class="m-b-0 text-white">Add Admin</h4>
                                         </div>
                                         <div class="card-body">
                                             <form action='' method='post' enctype="multipart/form-data">
@@ -141,24 +168,16 @@ if ($do == "users") {
                                                         <div class="col-md-6">
                                                             <div class="form-group">
                                                                 <label class="control-label">Username</label>
-                                                                <input type="text" name="uname" class="form-control" placeholder="username">
+                                                                <input type="text" name="Uname" class="form-control" placeholder="username">
                                                             </div>
                                                         </div>
-                                                        <!--/span-->
-                                                        <div class="col-md-6">
-                                                            <div class="form-group has-danger">
-                                                                <label class="control-label">First-Name</label>
-                                                                <input type="text" name="fname" class="form-control form-control-danger" placeholder="jon">
-                                                            </div>
-                                                        </div>
-                                                        <!--/span-->
                                                     </div>
                                                     <!--/row-->
                                                     <div class="row p-t-20">
                                                         <div class="col-md-6">
                                                             <div class="form-group">
-                                                                <label class="control-label">Last-Name </label>
-                                                                <input type="text" name="lname" class="form-control" placeholder="doe">
+                                                                <label class="control-label">Full Name </label>
+                                                                <input type="text" name="Fname" class="form-control" placeholder="doe">
                                                             </div>
                                                         </div>
                                                         <!--/span-->
@@ -186,17 +205,6 @@ if ($do == "users") {
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <!--/span-->
-                                                    <h3 class="box-title m-t-40"> Address</h3>
-                                                    <hr>
-                                                    <div class="row">
-                                                        <div class="col-md-12 ">
-                                                            <div class="form-group">
-                                                                <textarea name="address" type="text" style="height:100px;" class="form-control"></textarea>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <!--/span-->
                                                 </div>
                                         </div>
                                         <div class="form-actions">
@@ -256,6 +264,7 @@ if ($do == "users") {
                     }
                 }
                 ?>
+
                     <body class="fix-header">
                         <!-- Preloader - style you can find in spinners.css -->
                         <div class="preloader">
@@ -301,7 +310,7 @@ if ($do == "users") {
                                                         <?php $ssql = "select * from users where u_id='$_GET[user_upd]'";
                                                         $res = mysqli_query($db, $ssql);
                                                         $newrow = mysqli_fetch_array($res); ?>
-                                                        <form action='' method='post'>
+                                                        <form action='' method='postS'>
                                                             <div class="form-body">
 
                                                                 <hr>
