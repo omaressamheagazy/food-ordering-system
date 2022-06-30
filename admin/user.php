@@ -103,7 +103,7 @@ if ($do == "users") {
                 // check if the entered username is used before in the database or not
                 $isUserNameExist = mysqli_num_rows($query);
                 if (!$isUserNameExist) {
-                    $SQL = "insert into admin(FullName,username,password,email) values('" . $_POST["Fname"] . "','" . $_POST["Uname"] . "','" . $_POST["password"] . "','" . $_POST["email"] . "')";
+                    $SQL = "insert into admin(FullName,username,password,email) values('" . $_POST["Fname"] . "','" . $_POST["Uname"] . "','" . md5($_POST["password"]) . "','" . $_POST["email"] . "')";
                     mysqli_query($db, $SQL);
                     $success =     '<div class="alert alert-success alert-dismissible fade show">
 																<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
@@ -217,7 +217,7 @@ if ($do == "users") {
                     <!-- End Container fluid  -->
                 <?php include "{$tpl}footer.php";
             } else if ($do == "delete") {
-                mysqli_query($db, "DELETE FROM users WHERE u_id = '" . $_GET['user_del'] . "'");
+                mysqli_query($db, "DELETE FROM admin WHERE adm_id = '" . $_GET['user_del'] . "'");
                 header("location:?do=users");
             } else if ($do == "update") {
                 if (isset($_POST['submit'])) {
@@ -249,7 +249,7 @@ if ($do == "users") {
 																<strong>invalid email!</strong>
 															</div>';
                         } else {
-                            $mql = "update admin set username='$_POST[uname]', FullName='$_POST[fname]', email='$_POST[email]',password='"  . "' where adm_id='$_GET[user_upd]' ";
+                            $mql = "update admin set username='$_POST[uname]', FullName='$_POST[fname]', email='$_POST[email]' where adm_id='$_GET[user_upd]' ";
                             mysqli_query($db, $mql);
                             $success =     '<div class="alert alert-success alert-dismissible fade show">
 																<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
