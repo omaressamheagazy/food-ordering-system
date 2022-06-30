@@ -40,7 +40,6 @@ if ($do == "users") {
                             <div class="card">
                                 <div class="card-body">
                                     <h4 class="card-title">All Registered users</h4>
-
                                     <div class="table-responsive m-t-40">
                                         <table id="myTable" class="table table-bordered table-striped">
                                             <thead>
@@ -54,7 +53,7 @@ if ($do == "users") {
                                             </thead>
                                             <tbody>
                                                 <?php
-                                                $sql = "SELECT * FROM admin order by adm_id";
+                                                $sql = "SELECT * FROM admin where not adm_id={$_SESSION["adm_id"]} order by adm_id";
                                                 $query = mysqli_query($db, $sql);
 
                                                 if (!mysqli_num_rows($query) > 0) {
@@ -92,7 +91,7 @@ if ($do == "users") {
         if (isset($_POST["submit"])) {
             if (empty($_POST["Uname"]) || empty($_POST["Fname"]) || empty($_POST["email"]) || empty($_POST["password"])) {
         ?>
-                <div>All fields are requiredS</div>
+                <div>All fields are required</div>
         <?php
             } else {
                 $sql = "SELECT  username FROM admin WHERE username='{$_POST["Uname"]}' limit 1";
@@ -225,7 +224,7 @@ if ($do == "users") {
                     ) {
                         $error = '<div class="alert alert-danger alert-dismissible fade show">
 																<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-																<strong>All fields Required!</strong>
+																<strong>All fields are Required!</strong>
 															</div>';
                     } else {
                         $sql = "SELECT  username, adm_id FROM admin WHERE username='{$_POST["uname"]}' limit 1";

@@ -53,6 +53,9 @@
                                 <ul class="dropdown-user">
                                     <li><a href="logout.php"><i class="fa fa-power-off"></i> Logout</a></li>
                                 </ul>
+                                <ul class="dropdown-user">
+                                    <li><a href="user.php?do=update&user_upd=<?php echo $_SESSION["adm_id"]?>"><i class="fa fa-power-off"></i> Edit profile</a></li>
+                                </ul>
                             </div>
                         </li>
                     </ul>
