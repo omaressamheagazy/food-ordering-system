@@ -8,6 +8,7 @@ session_start();
 if (empty($_SESSION['user_id']))  //if usser is not login redirected baack to login page
 {
     header('location:login.php');
+    exit();
 } else {
 ?>
 

@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <?php
-include("connection/connect.php");
 include "init.php";
 //error_reporting(0);
 session_start();
