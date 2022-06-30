@@ -6,6 +6,7 @@ include("../connection/connect.php");
 session_start();
 if (empty($_SESSION["adm_id"])) {
     header('location:index.php');
+    exit();
 } else {
     include "init.php"
 ?>

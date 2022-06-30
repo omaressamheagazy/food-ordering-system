@@ -3,7 +3,10 @@
 <?php
 include("../connection/connect.php");
 session_start();
-
+if (empty($_SESSION["adm_id"])) {
+    header('location:index.php');
+    exit();
+} else {
 include "init.php";
 
 $do =  isset($_GET["do"]) ? $_GET["do"] : "dish";
@@ -436,4 +439,5 @@ if ($do == "dish") {
                 <!-- End Container fluid  -->
             <?php include "{$tpl}footer.php";
         }
+    }
             ?>

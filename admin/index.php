@@ -17,6 +17,7 @@ if (isset($_POST['submit'])) {
 		if (is_array($row)) {
 			$_SESSION["adm_id"] = $row['adm_id'];
 			header("refresh:1;url=dashboard.php");
+			exit();
 		} else {
 			$message = "Invalid Username or Password!";
 		}
