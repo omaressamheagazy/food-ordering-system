@@ -15,8 +15,8 @@
                 <li class="nav-label">Log</li>
                 <li> <a class="has-arrow  " href="#" aria-expanded="false"> <span><i class="fa fa-user f-s-20 "></i></span><span class="hide-menu">Users</span></a>
                     <ul aria-expanded="false" class="collapse">
-                        <li><a href="allusers.php">All Users</a></li>
-                        <li><a href="add_users.php">Add Users</a></li>
+                        <li><a href="user.php?do=users">All Users</a></li>
+                        <li><a href="user.php?do=add">Add Users</a></li>
                     </ul>
                 </li>
                 <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-archive f-s-20 color-warning"></i><span class="hide-menu">Category</span></a>

@@ -29,8 +29,8 @@ if (isset($_POST['submit1'])) {
 		empty($_POST['cr_user']) ||
 		empty($_POST['cr_email']) ||
 		empty($_POST['cr_pass']) ||
-		empty($_POST['cr_cpass']) ||
-		empty($_POST['code'])
+		empty($_POST['cr_cpass']) 
+		// empty($_POST['code'])
 	) {
 		$message = "ALL fields must be fill";
 	} else {
@@ -40,7 +40,7 @@ if (isset($_POST['submit1'])) {
 
 		$check_email = mysqli_query($db, "SELECT email FROM admin where email = '" . $_POST['cr_email'] . "' ");
 
-		$check_code = mysqli_query($db, "SELECT adm_id FROM admin where code = '" . $_POST['code'] . "' ");
+		// $check_code = mysqli_query($db, "SELECT adm_id FROM admin where code = '" . $_POST['code'] . "' ");
 
 
 		if ($_POST['cr_pass'] != $_POST['cr_cpass']) {
@@ -53,24 +53,24 @@ if (isset($_POST['submit1'])) {
 		} elseif (mysqli_num_rows($check_email) > 0) {
 			$message = 'Email Already exists!';
 		}
-		if (mysqli_num_rows($check_code) > 0)           // if code already exist 
-		{
-			$message = "Unique Code Already Redeem!";
-		} else {
-			$result = mysqli_query($db, "SELECT id FROM admin_codes WHERE codes =  '" . $_POST['code'] . "'");  //query to select the id of the valid code enter by user! 
+		// if (mysqli_num_rows($check_code) > 0)           // if code already exist 
+		// {
+		// 	$message = "Unique Code Already Redeem!";
+		// } else {
+		// 	$result = mysqli_query($db, "SELECT id FROM admin_codes WHERE codes =  '" . $_POST['code'] . "'");  //query to select the id of the valid code enter by user! 
 
-			if (mysqli_num_rows($result) == 0)     //if code is not valid
-			{
-				// row not found, do stuff...
-				$message = "invalid code!";
-			} else                                 //if code is valid 
-			{
+		// 	if (mysqli_num_rows($result) == 0)     //if code is not valid
+		// 	{
+		// 		// row not found, do stuff...
+		// 		$message = "invalid code!";
+		// 	} else                                 //if code is valid 
+		// 	{
 
-				$mql = "INSERT INTO admin (username,password,email,code) VALUES ('" . $_POST['cr_user'] . "','" . md5($_POST['cr_pass']) . "','" . $_POST['cr_email'] . "','" . $_POST['code'] . "')";
-				mysqli_query($db, $mql);
-				$success = "Admin Added successfully!";
-			}
-		}
+		// 		$mql = "INSERT INTO admin (username,password,email,code) VALUES ('" . $_POST['cr_user'] . "','" . md5($_POST['cr_pass']) . "','" . $_POST['cr_email'] . "','" . $_POST['code'] . "')";
+		// 		mysqli_query($db, $mql);
+		// 		$success = "Admin Added successfully!";
+		// 	}
+		// }
 	}
 }
 ?>
@@ -105,7 +105,7 @@ if (isset($_POST['submit1'])) {
 			<input type="text" placeholder="email address" name="cr_email" />
 			<input type="password" placeholder="password" name="cr_pass" />
 			<input type="password" placeholder="Confirm password" name="cr_cpass" />
-			<input type="password" placeholder="Unique-Code" name="code" />
+			<!-- <input type="password" placeholder="Unique-Code" name="code" /> -->
 			<input type="submit" name="submit1" value="Create" />
 			<p class="message">Already registered? <a href="#">Sign In</a></p>
 		</form>

@@ -48,7 +48,7 @@ if ($do == "order") {
                                             <thead>
                                                 <tr>
                                                     <th>Username</th>
-                                                    <th>Title</th>
+                                                    <th>Dish Name</th>
                                                     <th>Quantity</th>
                                                     <th>price</th>
                                                     <th>Address</th>
@@ -72,7 +72,7 @@ if ($do == "order") {
                                                 ?>
                                                         <?php
                                                         echo ' <tr>
-																					           <td>' . $rows['username'] . '</td>
+																					            <td>' . $rows['username'] . '</td>
 																								<td>' . $rows['title'] . '</td>
 																								<td>' . $rows['quantity'] . '</td>
 																								<td>RM' . $rows['price'] . '</td>
@@ -193,7 +193,7 @@ if ($do == "order") {
                                                         </td>
                                                     </tr>
                                                     <tr>
-                                                        <td><strong>Title:</strong></td>
+                                                        <td><strong>Dish name:</strong></td>
                                                         <td>
                                                             <center><?php echo $rows['title']; ?></center>
                                                         </td>
@@ -328,9 +328,9 @@ if ($do == "order") {
                             <tr>
                                 <td><b>Action</b></td>
                                 <td><input type="submit" name="update" class="btn btn-primary" value="Submit">
-                                <a href="?do=delete">
-                                    <input class="cancelButton" name="Submit2" type="submit" class="btn btn-danger" value="Close this window " onClick="return f2();" style="cursor: pointer;" />
-                                </a>
+                                    <a href="?do=delete">
+                                        <input class="cancelButton" name="Submit2" type="submit" class="btn btn-danger" value="Close this window " onClick="return f2();" style="cursor: pointer;" />
+                                    </a>
                                 </td>
                             </tr>
                         </table>
