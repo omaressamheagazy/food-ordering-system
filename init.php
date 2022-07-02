@@ -8,6 +8,10 @@ $tpl = "template/";
 
 
 // include all the important files
+if(!isset($noNavBar)) {
+    include "{$tpl}navbar.php";
+}
 
-include "{$tpl}header.php";
-include "{$tpl}navbar.php";
+if (!isset($noHeader)) {
+    include "{$tpl}header.php";
+}
