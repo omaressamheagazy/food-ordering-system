@@ -28,6 +28,7 @@ if (isset($_POST['submit']))   // if button is submit
 	}
 }
 ?>
+
 <head>
 	<meta charset="UTF-8">
 	<title>login</title>
@@ -65,7 +66,7 @@ if (isset($_POST['submit']))   // if button is submit
 			</form>
 		</div>
 
-		<div class="cta">Not registered?<a href="registration.php" style="color:#f30;"> Create an account</a></div>
+		<div class="cta">Not registered?<a href="registration.php" style="color:#3b5998;"> Create an account</a></div>
 	</div>
 </body>
 

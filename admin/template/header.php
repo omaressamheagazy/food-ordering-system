@@ -10,12 +10,16 @@
     <title>Nasi Kurabu</title>
     <!-- Bootstrap Core CSS -->
     <link href="<?Php echo $css ?>lib/bootstrap/bootstrap.min.css" rel="stylesheet">
+    <link rel='stylesheet prefetch' href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900'>
+    <link rel='stylesheet prefetch' href='https://fonts.googleapis.com/css?family=Montserrat:400,700'>
+    <link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css'>
+
     <!-- Custom CSS -->
     <link href="<?Php echo $css ?>helper.css" rel="stylesheet">
     <link href="<?Php echo $css ?>style.css" rel="stylesheet">
     <link href="<?Php echo $css ?>update_order.css" rel="stylesheet">
+    <link rel="stylesheet" href="<?Php echo $css ?>login.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <!-- font awesome -->
     <script src="https://kit.fontawesome.com/4d6dd7bf1f.js" crossorigin="anonymous"></script>
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:** -->
