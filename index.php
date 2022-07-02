@@ -12,7 +12,6 @@ include "init.php";
     <div class="hero-inner">
         <div class="container text-center hero-text font-white">
             <h1>Order Delivery & Take-Out </h1>
-            <h5 class="font-white space-xs">Find restaurants, specials, and coupons for free</h5>
             <div class="steps">
                 <div class="step-item step1">
                     <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 483 483" width="512" height="512">

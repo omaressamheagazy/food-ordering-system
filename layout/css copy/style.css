@@ -146,8 +146,8 @@ hr {
 }
 
 .custom-control-input:focus~.custom-control-indicator {
-    -webkit-box-shadow: 0 0 0 .075rem #fff, 0 0 0 .2rem #3b5998;
-    box-shadow: 0 0 0 .075rem #fff, 0 0 0 .2rem #3b5998;
+    -webkit-box-shadow: 0 0 0 .075rem #fff, 0 0 0 .2rem #f30;
+    box-shadow: 0 0 0 .075rem #fff, 0 0 0 .2rem #f30;
 }
 
 .custom-radio .custom-control-input:checked~.custom-control-indicator {
@@ -765,7 +765,7 @@ hr {
 
 .food-item-wrap:hover h5>a,
 .food-item-wrap:hover .right-text>a {
-    color: #3b5998;
+    color: #f30;
 }
 
 .food-item-wrap .figure-text {
@@ -790,7 +790,7 @@ hr {
 }
 
 .food-item-wrap .distance {
-    background: #3b5998;
+    background: #f30;
     border-radius: 3px;
     color: #fff;
     font-size: 12px;
@@ -956,7 +956,7 @@ button.close {
     right: -15px;
     position: absolute;
     top: -15px;
-    background-color: #3b5998;
+    background-color: #f30;
     opacity: 1;
     width: 30px;
     height: 30px;
@@ -1056,7 +1056,7 @@ Steps
     width: 32px;
     height: 32px;
     line-height: 38px;
-    background-color: #3b5998;
+    background-color: #f30;
     border-radius: 50%;
     font-size: 1.5em;
     font-family: "Give You Glory", cursive;
@@ -1224,7 +1224,7 @@ Steps
 }
 
 .featured-restaurants .ratings span i {
-    color: #3b5998;
+    color: #f30;
 }
 
 .featured-restaurants .ratings .fa-star-o {}
@@ -1276,7 +1276,7 @@ Steps
 
 .add-restaurants p strong {
     font-weight: 600;
-    color: #3b5998;
+    color: #f30;
 }
 
 @media (min-width: 320px) and (max-width: 543px) {
@@ -1316,7 +1316,7 @@ App section
 .app-section:after {
     content: "";
     background: url(../../images/city-2.png) center bottom;
-    background-color: #3b5998;
+    background-color: #f30;
     display: block;
     position: absolute;
     top: 100px;
@@ -1464,7 +1464,7 @@ footer span {
 }
 
 .address h5 a {
-    color: #3b5998;
+    color: #f30;
     font-size: 26px;
     font-family: "Give You Glory", cursive;
     margin-left: 20px;
@@ -1498,7 +1498,7 @@ footer ul li a {
 }
 
 footer ul li a:hover {
-    color: #3b5998;
+    color: #f30;
 }
 
 footer li a {
@@ -1780,7 +1780,7 @@ footer li a {
 
 .sidebar-title {
     padding: 15px 15px 15px;
-    background: #3b5998;
+    background: #f30;
     float: left;
     width: 100%;
 }
@@ -1828,7 +1828,7 @@ footer li a {
 }
 
 .main-block ul li:hover a {
-    color: #3b5998
+    color: #f30
 }
 
 .main-block ul:hover li:last-child {
@@ -2094,7 +2094,7 @@ a[aria-expanded=false] .fa-angle-down {
 }
 
 .restaurant-entry .right-review .rating-block {
-    color: #3b5998;
+    color: #f30;
     background: transparent;
     border: none;
     padding: 5px 15px 5px;
@@ -2171,8 +2171,8 @@ a[aria-expanded=false] .fa-angle-down {
 
 .tag:hover {
     color: #fff;
-    border-color: #3b5998;
-    background-color: #3b5998
+    border-color: #f30;
+    background-color: #f30
 }
 
 
@@ -2323,7 +2323,7 @@ a[aria-expanded=false] .fa-angle-down {
     display: block;
     width: 20px;
     height: 20px;
-    background-color: #3b5998;
+    background-color: #f30;
     color: #fff;
     line-height: 20px;
     text-align: center;
@@ -2356,7 +2356,7 @@ a[aria-expanded=false] .fa-angle-down {
     left: 10px;
     top: 10px;
     z-index: 9999;
-    background: #3b5998;
+    background: #f30;
     display: inline-block;
     padding: 0px 10px;
     margin-top: 5px;
@@ -2388,7 +2388,7 @@ a[aria-expanded=false] .fa-angle-down {
 }
 
 .wwone__map-infobox__inner__heading {
-    color: #3b5998;
+    color: #f30;
     display: block;
     width: 100%;
     font-size: 16px;
@@ -2408,7 +2408,7 @@ a[aria-expanded=false] .fa-angle-down {
 }
 
 .wwone__map-infobox__inner__btn {
-    background-color: #3b5998;
+    background-color: #f30;
     padding: 6px 15px;
     border-radius: 3px;
     display: inline-block;
@@ -2627,7 +2627,7 @@ a[aria-expanded=false] .fa-angle-down {
     -moz-box-sizing: border-box;
     box-sizing: border-box;
     border-radius: 4px;
-    background-color: #3b5998;
+    background-color: #f30;
 }
 
 .slider-selection.tick-slider-selection {
