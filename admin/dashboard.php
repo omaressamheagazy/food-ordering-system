@@ -45,7 +45,7 @@ if (empty($_SESSION["adm_id"])) {
                                         <span><i class="fa fa-archive f-s-40 color-warning"></i></span>
                                     </div>
                                     <div class="media-body media-text-right">
-                                        <h2><?php $sql = "select * from restaurant";
+                                        <h2><?php $sql = "select * from category";
                                             $result = mysqli_query($db, $sql);
                                             $rws = mysqli_num_rows($result);
 

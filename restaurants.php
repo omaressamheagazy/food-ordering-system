@@ -83,17 +83,17 @@ session_start();
                     <div class="col-xs-12 col-sm-7 col-md-7 col-lg-9">
                         <div class="bg-gray restaurant-entry">
                             <div class="row">
-                                <?php $ress = mysqli_query($db, "select * from restaurant");
+                                <?php $ress = mysqli_query($db, "select * from category");
                                 while ($rows = mysqli_fetch_array($ress)) {
                                 ?>
 
                                     <div class="col-sm-12 col-md-12 col-lg-8 text-xs-center text-sm-left">
                                         <div class="entry-logo">
-                                            <a class="img-fluid" href="dishes.php?res_id=<?php echo $rows['rs_id'] ?>"> <img src="admin/Res_img/<?php echo $rows['image'] ?>" alt="Food logo"></a>
+                                            <a class="img-fluid" href="dishes.php?res_id=<?php echo $rows['id'] ?>"> <img src="admin/Res_img/<?php echo $rows['image'] ?>" alt="Food logo"></a>
                                         </div>
                                         <!-- end:Logo -->
                                         <div class="entry-dscr">
-                                            <h5><a href="dishes.php?res_id=<?php echo $rows['rs_id'] ?>"><?php echo $rows['title'] ?></a></h5> <span>
+                                            <h5><a href="dishes.php?res_id=<?php echo $rows['id'] ?>"><?php echo $rows['title'] ?></a></h5> <span>
                                         </div>
                                         <!-- end:Entry description -->
                                     </div>
@@ -101,7 +101,7 @@ session_start();
                                         <div class="right-content bg-white">
                                             <div class="right-review">
                                             <br>
-                                                <a href="dishes.php?res_id=<?php echo $rows['rs_id'] ?>" class="btn theme-btn-dash">View <?php echo $rows['title'] ?></a>
+                                                <a href="dishes.php?res_id=<?php echo $rows['id'] ?>" class="btn theme-btn-dash">View <?php echo $rows['title'] ?></a>
                                             </div>
                                         </div>
                                         <!-- end:right info -->

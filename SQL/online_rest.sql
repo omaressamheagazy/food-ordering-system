@@ -78,7 +78,7 @@ INSERT INTO `admin_codes` (`id`, `codes`) VALUES
 
 CREATE TABLE IF NOT EXISTS `dishes` (
   `d_id` int(222) NOT NULL AUTO_INCREMENT,
-  `rs_id` int(222) NOT NULL,
+  `id` int(222) NOT NULL,
   `title` varchar(222) NOT NULL,
   `slogan` varchar(222) NOT NULL,
   `price` decimal(10,2) NOT NULL,
@@ -90,7 +90,7 @@ CREATE TABLE IF NOT EXISTS `dishes` (
 -- Dumping data for table `dishes`
 --
 
-INSERT INTO `dishes` (`d_id`, `rs_id`, `title`, `slogan`, `price`, `img`) VALUES
+INSERT INTO `dishes` (`d_id`, `id`, `title`, `slogan`, `price`, `img`) VALUES
 (11, 48, 'Bonefish', 'Three ounces of lightly seasoned fresh tilapia ', '55.77', '5ad7582e2ec9c.jpg'),
 (12, 48, 'Hard Rock Cafe', 'A mix of chopped lettuces, shredded cheese, chicken cubes', '22.12', '5ad7590d9702b.jpg'),
 (13, 49, 'Uno Pizzeria & Grill', 'Kids can choose their pasta shape, type of sauce, favorite veggies (like broccoli or mushrooms)', '12.35', '5ad7597aa0479.jpg'),
@@ -136,7 +136,7 @@ INSERT INTO `remark` (`id`, `frm_id`, `status`, `remark`, `remarkDate`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `restaurant` (
-  `rs_id` int(222) NOT NULL AUTO_INCREMENT,
+  `id` int(222) NOT NULL AUTO_INCREMENT,
   `c_id` int(222) NOT NULL,
   `title` varchar(222) NOT NULL,
   `email` varchar(222) NOT NULL,
@@ -148,14 +148,14 @@ CREATE TABLE IF NOT EXISTS `restaurant` (
   `address` text NOT NULL,
   `image` text NOT NULL,
   `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  PRIMARY KEY (`rs_id`)
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=54 ;
 
 --
 -- Dumping data for table `restaurant`
 --
 
-INSERT INTO `restaurant` (`rs_id`, `c_id`, `title`, `email`, `phone`, `url`, `o_hr`, `c_hr`, `o_days`, `address`, `image`, `date`) VALUES
+INSERT INTO `restaurant` (`id`, `c_id`, `title`, `email`, `phone`, `url`, `o_hr`, `c_hr`, `o_days`, `address`, `image`, `date`) VALUES
 (48, 5, 'Hari Burger', 'HariBurger@gmail.com', ' 090412 64676', 'HariBurger.com', '7am', '4pm', 'mon-tue', ' Palace,   natwar jalandhar', '5ad74ce37c383.jpg', '2018-04-18 13:49:23'),
 (49, 5, 'The Great Kabab Factory', 'kwbab@gmail.com', '011 2677 9070', 'kwbab.com', '6am', '5pm', 'mon-fri', 'Radisson Blu Plaza Hotel, Delhi Airport, NH-8, New Delhi, 110037', '5ad74de005016.jpg', '2018-04-18 13:53:36'),
 (50, 6, 'Aarkay Vaishno Dhaba', 'Vaishno@gmail.com', '090410 35147', 'Vaishno.com', '6am', '6pm', 'mon-sat', 'Bhargav Nagar, Jalandhar - Nakodar Rd, Jalandhar, Punjab 144003', '5ad74e5310ae4.jpg', '2018-04-18 13:55:31'),

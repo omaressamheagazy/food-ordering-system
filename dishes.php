@@ -25,7 +25,7 @@ include_once 'product-action.php'; //including controller
     </div>
     <!-- end:Top links -->
     <!-- start: Inner page hero -->
-    <?php $ress = mysqli_query($db, "select * from restaurant where rs_id='$_GET[res_id]'");
+    <?php $ress = mysqli_query($db, "select * from category where id='$_GET[res_id]'");
     $rows = mysqli_fetch_array($ress);
 
     ?>
@@ -154,7 +154,7 @@ include_once 'product-action.php'; //including controller
                     </div>
                     <div class="collapse in" id="popular2">
                         <?php  // display values and item of food/dishes
-                        $stmt = $db->prepare("select * from dishes where rs_id='$_GET[res_id]'");
+                        $stmt = $db->prepare("select * from dishes where cat_id='$_GET[res_id]'");
                         $stmt->execute();
                         $products = $stmt->get_result();
                         if (!empty($products)) {

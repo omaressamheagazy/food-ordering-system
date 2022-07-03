@@ -78,7 +78,7 @@ if (empty($_SESSION["adm_id"])) {
                                                         echo '<td colspan="11"><center>No Dish-Data!</center></td>';
                                                     } else {
                                                         while ($rows = mysqli_fetch_array($query)) {
-                                                            $mql = "select * from restaurant where rs_id='" . $rows['rs_id'] . "'";
+                                                            $mql = "select * from category where id='" . $rows['cat_id'] . "'";
                                                             $newquery = mysqli_query($db, $mql);
                                                             $fetch = mysqli_fetch_array($newquery);
 
@@ -148,7 +148,7 @@ if (empty($_SESSION["adm_id"])) {
 
 
 
-                        $sql = "update dishes set rs_id='$_POST[res_name]',title='$_POST[d_name]',favourite='$_POST[popularDish]',slogan='$_POST[about]',price='$_POST[price]',img='$fnew' where d_id='$_GET[menu_upd]'";  // update the submited data ino the database :images
+                        $sql = "update dishes set id='$_POST[res_name]',title='$_POST[d_name]',favourite='$_POST[popularDish]',slogan='$_POST[about]',price='$_POST[price]',img='$fnew' where d_id='$_GET[menu_upd]'";  // update the submited data ino the database :images
                         mysqli_query($db, $sql);
                         move_uploaded_file($temp, $store);
 
@@ -251,10 +251,10 @@ if (empty($_SESSION["adm_id"])) {
                                                             <label class="control-label">Select Category</label>
                                                             <select name="res_name" class="form-control custom-select" data-placeholder="Choose a Category" tabindex="1">
                                                                 <option>--Select Category--</option>
-                                                                <?php $ssql = "select * from restaurant";
+                                                                <?php $ssql = "select * from category";
                                                                 $res = mysqli_query($db, $ssql);
                                                                 while ($row = mysqli_fetch_array($res)) {
-                                                                    echo ' <option value="' . $row['rs_id'] . '">' . $row['title'] . '</option>';;
+                                                                    echo ' <option value="' . $row['id'] . '">' . $row['title'] . '</option>';;
                                                                 }
                                                                 ?>
                                                             </select>
@@ -312,7 +312,7 @@ if (empty($_SESSION["adm_id"])) {
 																<strong>Max Image Size is 1024kb!</strong> Try different Image.
 															</div>';
                         } else {
-                            $sql = "INSERT INTO dishes(rs_id,title,favourite,slogan,price,img) VALUE('" . $_POST['res_name'] . "','" . $_POST['d_name'] . "','" . $_POST['popularDish'] .  "','" . $_POST['about'] . "','" . $_POST['price'] . "','" . $fnew . "')";  // store the submited data ino the database :images
+                            $sql = "INSERT INTO dishes(id,title,favourite,slogan,price,img) VALUE('" . $_POST['res_name'] . "','" . $_POST['d_name'] . "','" . $_POST['popularDish'] .  "','" . $_POST['about'] . "','" . $_POST['price'] . "','" . $fnew . "')";  // store the submited data ino the database :images
                             mysqli_query($db, $sql);
                             move_uploaded_file($temp, $store);
 
@@ -418,10 +418,10 @@ if (empty($_SESSION["adm_id"])) {
                                                                 <label class="control-label">Select Category</label>
                                                                 <select name="res_name" class="form-control custom-select" data-placeholder="Choose a Category" tabindex="1">
                                                                     <option>--Select Category--</option>
-                                                                    <?php $ssql = "select * from restaurant";
+                                                                    <?php $ssql = "select * from category";
                                                                     $res = mysqli_query($db, $ssql);
                                                                     while ($row = mysqli_fetch_array($res)) {
-                                                                        echo ' <option value="' . $row['rs_id'] . '">' . $row['title'] . '</option>';;
+                                                                        echo ' <option value="' . $row['id'] . '">' . $row['title'] . '</option>';;
                                                                     }
                                                                     ?>
                                                                 </select>

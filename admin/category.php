@@ -69,7 +69,7 @@ if (empty($_SESSION["adm_id"])) {
 
 
                                                     <?php
-                                                    $sql = "SELECT * FROM restaurant order by rs_id desc";
+                                                    $sql = "SELECT * FROM category order by id desc";
                                                     $query = mysqli_query($db, $sql);
 
                                                     if (!mysqli_num_rows($query) > 0) {
@@ -77,7 +77,7 @@ if (empty($_SESSION["adm_id"])) {
                                                     } else {
                                                         while ($rows = mysqli_fetch_array($query)) {
 
-                                                            $mql = "SELECT * FROM restaurant where rs_id='" . $rows['rs_id'] . "'";
+                                                            $mql = "SELECT * FROM category where id='" . $rows['id'] . "'";
                                                             $res = mysqli_query($db, $mql);
                                                             $row = mysqli_fetch_array($res);
                                                     ?>
@@ -88,8 +88,8 @@ if (empty($_SESSION["adm_id"])) {
                                                                         <center><img src="Res_img/<?php echo $rows['image'] ?>" class="img-responsive radius" style="min-width:150px;min-height:100px;" /></center>
                                                                     </div>
                                                                 </td>
-                                                                <td><a href="?do=delete&res_del= <?php echo $rows['rs_id'] ?>" class="btn btn-danger btn-flat btn-addon btn-xs m-b-10"><i class="fa fa-trash-o" style="font-size:16px"></i></a>
-                                                                    <a href="?do=update&res_upd=<?php echo $rows['rs_id'] ?>" class="btn btn-info btn-flat btn-addon btn-sm m-b-10 m-l-5"><i class="ti-settings"></i></a>
+                                                                <td><a href="?do=delete&res_del= <?php echo $rows['id'] ?>" class="btn btn-danger btn-flat btn-addon btn-xs m-b-10"><i class="fa fa-trash-o" style="font-size:16px"></i></a>
+                                                                    <a href="?do=update&res_upd=<?php echo $rows['id'] ?>" class="btn btn-info btn-flat btn-addon btn-sm m-b-10 m-l-5"><i class="ti-settings"></i></a>
                                                                 </td>
                                                             </tr>
                                                     <?php
@@ -143,13 +143,13 @@ if (empty($_SESSION["adm_id"])) {
 
                         $res_name = $_POST['res_name'];
 
-                        $sql = "INSERT INTO restaurant(title, image) VALUE('" . $res_name . "','" . $fnew . "')";  // store the submited data ino the database :images
+                        $sql = "INSERT INTO category(title, image) VALUE('" . $res_name . "','" . $fnew . "')";  // store the submited data ino the database :images
                         mysqli_query($db, $sql);
                         move_uploaded_file($temp, $store);
 
                         $success =     '<div class="alert alert-success alert-dismissible fade show">
 																<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-																<strong>Congrass!</strong> New Restaurant Added Successfully.
+																<strong>Congrass!</strong> New category Added Successfully.
 															</div>';
                     }
                 } elseif ($extension == '') {
@@ -272,7 +272,7 @@ if (empty($_SESSION["adm_id"])) {
 
                             $res_name = $_POST['res_name'];
 
-                            $sql = "update restaurant set  title='$res_name',image='$fnew' where rs_id='$_GET[res_upd]' ";  // store the submited data ino the database :images												mysqli_query($db, $sql); 
+                            $sql = "update category set  title='$res_name',image='$fnew' where id='$_GET[res_upd]' ";  // store the submited data ino the database :images												mysqli_query($db, $sql); 
                             mysqli_query($db, $sql);
                             move_uploaded_file($temp, $store);
 
@@ -334,12 +334,12 @@ if (empty($_SESSION["adm_id"])) {
                                 <div class="col-lg-12">
                                     <div class="card card-outline-primary">
 
-                                        <h4 class="m-b-0 ">Update Restaurant</h4>
+                                        <h4 class="m-b-0 ">Update category</h4>
 
                                         <div class="card-body">
                                             <form action='' method='post' enctype="multipart/form-data">
                                                 <div class="form-body">
-                                                    <?php $ssql = "select * from restaurant where rs_id='$_GET[res_upd]'";
+                                                    <?php $ssql = "select * from category where id='$_GET[res_upd]'";
                                                     $res = mysqli_query($db, $ssql);
                                                     $row = mysqli_fetch_array($res); ?>
                                                     <hr>
@@ -378,7 +378,7 @@ if (empty($_SESSION["adm_id"])) {
                         <!-- End footer -->
                 <?php include "{$tpl}footer.php";
             } else if ($do == "delete") {
-                mysqli_query($db, "DELETE FROM restaurant WHERE rs_id = '" . $_GET['res_del'] . "'");
+                mysqli_query($db, "DELETE FROM category WHERE id = '" . $_GET['res_del'] . "'");
                 header("location:?do=category");
             }
         }
