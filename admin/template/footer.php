@@ -18,6 +18,7 @@
         <!--Custom JavaScript -->
         <script src="js/custom.min.js"></script>
         <script src="js/view-order.js"></script>
+        <script src="layout/js/dish.js"></script>
         <script src="js/lib/datatables/datatables.min.js"></script>
         <script src="js/lib/datatables/cdn.datatables.net/buttons/1.2.2/js/dataTables.buttons.min.js"></script>
         <script src="js/lib/datatables/cdn.datatables.net/buttons/1.2.2/js/buttons.flash.min.js"></script>

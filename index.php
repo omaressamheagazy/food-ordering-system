@@ -62,7 +62,7 @@ include "init.php";
 
             <?php
             // fetch records from database to display popular first 3 dishes from table
-            $query_res = mysqli_query($db, "select * from dishes LIMIT 3");
+            $query_res = mysqli_query($db, "select * from dishes where favourite='yes' ");
             while ($r = mysqli_fetch_array($query_res)) {
 
                 echo '  <div class="col-xs-12 col-sm-6 col-md-4 food-item">
