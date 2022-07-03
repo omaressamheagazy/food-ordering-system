@@ -375,7 +375,6 @@ if (empty($_SESSION["adm_id"])) {
                         </div>
                         <!-- End Container fluid  -->
                         <!-- footer -->
-
                         <!-- End footer -->
                 <?php include "{$tpl}footer.php";
             } else if ($do == "delete") {

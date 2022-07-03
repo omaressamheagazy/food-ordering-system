@@ -15,7 +15,7 @@
                 <li class="nav-label">Log</li>
                 <li> <a class="has-arrow  " href="#" aria-expanded="false"> <span><i class="fa fa-user f-s-20 "></i></span><span class="hide-menu">Users</span></a>
                     <ul aria-expanded="false" class="collapse">
-                        <li><a href="user.php?do=users">All Users</a></li>
+                        <li><a href="user.php?do=users">All Admins</a></li>
                         <li><a href="user.php?do=add">Add Admin</a></li>
                     </ul>
                 </li>

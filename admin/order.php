@@ -338,7 +338,7 @@ if (empty($_SESSION["adm_id"])) {
                 </body>
 
 </html>
-<?php
+<?php include "{$tpl}footer.php";
         }
     }
 ?>
