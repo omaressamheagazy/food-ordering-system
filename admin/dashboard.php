@@ -110,19 +110,6 @@ if (empty($_SESSION["adm_id"])) {
                             </div>
                         </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
                     </div>
                     <!-- End PAge Content -->
                 </div>

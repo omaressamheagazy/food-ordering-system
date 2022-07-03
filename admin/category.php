@@ -111,7 +111,7 @@ if (empty($_SESSION["adm_id"])) {
             <!-- End Container fluid  -->
             <!-- footer -->
         <?php include "{$tpl}footer.php";
-    } else if ($do = "add") {
+    } else if ($do == "add") {
         if (isset($_POST['submit']))           //if upload btn is pressed
         {
             if (empty($_POST['res_name'])) {
@@ -380,7 +380,7 @@ if (empty($_SESSION["adm_id"])) {
                 <?php include "{$tpl}footer.php";
             } else if ($do == "delete") {
                 mysqli_query($db, "DELETE FROM restaurant WHERE rs_id = '" . $_GET['res_del'] . "'");
-                header("location:cateogry.php?do=category");
+                header("location:?do=category");
             }
         }
                 ?>
