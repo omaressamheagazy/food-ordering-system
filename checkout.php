@@ -3,6 +3,7 @@
 <?php
 include("connection/connect.php");
 include_once 'product-action.php';
+$pageTitle = "Checkout";
 include "init.php";
 $error = null;
 $success = null;
@@ -62,7 +63,7 @@ $success = null;
                     <div class="widget clearfix">
 
                         <div class="widget-body">
-                            <form method="post" action="#">
+                            <form method="post" action="?">
                                 <div class="row">
 
                                     <div class="col-sm-12">
@@ -106,7 +107,7 @@ $success = null;
                                                         <br> <span>Please send your cheque to Store Name, Store Street, Store Town, Store State / County, Store Postcode.</span> </label>
                                                 </li>
                                                 <li>
-                                                    <label class="custom-control custom-radio  m-b-10">
+                                                    <label class="custom-control custom-radio  m-b-10"> 
                                                         <input name="mod" type="radio" value="paypal" disabled class="custom-control-input"> <span class="custom-control-indicator"></span> <span class="custom-control-description">Paypal <img src="images/paypal.jpg" alt="" width="90"></span> </label>
                                                 </li>
                                             </ul>

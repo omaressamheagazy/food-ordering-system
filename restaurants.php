@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <?php
+$pageTitle = "Menu";
 include "init.php";
 $error = null;
 $success = null;

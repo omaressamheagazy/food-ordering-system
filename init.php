@@ -4,6 +4,8 @@ include("connection/connect.php");  //include connection file
 $css = "layout/css copy/";
 $js = "layout/js/";
 $tpl = "template/";
+$func = "includes/functions/";
+
 
 
 
@@ -13,5 +15,6 @@ if(!isset($noNavBar)) {
 }
 
 if (!isset($noHeader)) {
+    include "{$func}function.php";
     include "{$tpl}header.php";
 }

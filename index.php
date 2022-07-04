@@ -3,6 +3,7 @@
 <?php
 //error_reporting(0);  // using to hide undefine undex errors
 session_start(); //start temp session until logout/browser closed
+$pageTitle = "Home page";
 include "init.php";
 
 ?>

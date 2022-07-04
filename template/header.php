@@ -6,7 +6,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" href="#">
-    <title>Nasi kurabu</title>
+    <title><?php getPageTitle() ?></title>
     <!-- Bootstrap core CSS -->
     <link href="<?php echo $css ?>bootstrap.min.css" rel="stylesheet">
     <link href="<?php echo $css ?>animsition.min.css" rel="stylesheet">
@@ -17,7 +17,6 @@
     <link rel="stylesheet" href="<?php echo $css ?>order.php">
     <link rel='stylesheet prefetch' href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900|RobotoDraft:400,100,300,500,700,900'>
     <script src="https://kit.fontawesome.com/4d6dd7bf1f.js" crossorigin="anonymous"></script>
-    lin
 </head>
 
 <body>

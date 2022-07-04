@@ -2,6 +2,7 @@
 <html lang="en">
 <?php
 //error_reporting(0);
+$pageTitle = "Order";
 include "init.php";
 session_start();
 

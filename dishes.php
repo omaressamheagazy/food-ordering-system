@@ -4,6 +4,7 @@
 include("connection/connect.php"); // connection to db
 //error_reporting(0);
 session_start();
+$pageTitle = "Dish";
 include "init.php";
 include_once 'product-action.php'; //including controller
 

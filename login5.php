@@ -3,6 +3,7 @@
 <?php
 session_start(); // temp sessions
 $noNavBar = "";
+$pageTitle = "Login";
 include "init.php";
 $message = null;
 $success = null;
