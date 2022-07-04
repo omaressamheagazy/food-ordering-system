@@ -7,6 +7,7 @@ if (empty($_SESSION["adm_id"])) {
     exit();
 } else {
     $pageTitle = "Order";
+    $noHeader = "";
     include "init.php";
 
     $do =  isset($_GET["do"]) ? $_GET["do"] : "order";
@@ -282,7 +283,7 @@ if (empty($_SESSION["adm_id"])) {
             echo "delete this";
         } elseif ($do == "delete") {
             mysqli_query($db, "DELETE FROM users_orders WHERE o_id = '" . $_GET['order_del'] . "'");
-            header("location:all_orders.php");
+            header("location:?do=order");
         } elseif ($do == "update") {
             if (isset($_POST['update'])) {
                 $form_id = $_GET['form_id'];
@@ -291,6 +292,7 @@ if (empty($_SESSION["adm_id"])) {
                 $query = mysqli_query($db, "insert into remark(frm_id,status,remark) values('$form_id','$status','$remark')");
                 $sql = mysqli_query($db, "update users_orders set status='$status' where o_id='$form_id'");
                 echo "<script>alert('form details updated successfully');</script>";
+                header('location:?do=order');
             }
             ?>
 

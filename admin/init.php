@@ -9,4 +9,8 @@ include("../connection/connect.php");  //include connection file
 
 // include all the important files
 include "{$func}function.php";
-include "{$tpl}header.php";
+if(!isset($noHeader)) {
+    include "{$tpl}header.php";
+} else {
+    include "{$tpl}altHeader.php";
+}

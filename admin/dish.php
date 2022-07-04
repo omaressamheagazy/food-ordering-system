@@ -149,7 +149,7 @@ if (empty($_SESSION["adm_id"])) {
 
 
 
-                        $sql = "update dishes set id='$_POST[res_name]',title='$_POST[d_name]',favourite='$_POST[popularDish]',slogan='$_POST[about]',price='$_POST[price]',img='$fnew' where d_id='$_GET[menu_upd]'";  // update the submited data ino the database :images
+                        $sql = "update dishes set rs_id='$_POST[res_name]',title='$_POST[d_name]',slogan='$_POST[about]',price='$_POST[price]',img='$fnew' where d_id='$_GET[menu_upd]'";  // update the submited data ino the database :images
                         mysqli_query($db, $sql);
                         move_uploaded_file($temp, $store);
 
@@ -245,32 +245,23 @@ if (empty($_SESSION["adm_id"])) {
                                                 <!--/row-->
 
                                                 <!--/span-->
-                                                <!--/row-->
-                                                <div class="row p-t-20">
-                                                    <div class="col-md-6">
+                                                <div class="row">
+                                                    <div class="col-md-12">
                                                         <div class="form-group">
                                                             <label class="control-label">Select Category</label>
                                                             <select name="res_name" class="form-control custom-select" data-placeholder="Choose a Category" tabindex="1">
                                                                 <option>--Select Category--</option>
-                                                                <?php $ssql = "select * from category";
+                                                                <?php $ssql = "select * from restaurant";
                                                                 $res = mysqli_query($db, $ssql);
                                                                 while ($row = mysqli_fetch_array($res)) {
-                                                                    echo ' <option value="' . $row['id'] . '">' . $row['title'] . '</option>';;
+                                                                    echo ' <option value="' . $row['rs_id'] . '">' . $row['title'] . '</option>';;
                                                                 }
+
                                                                 ?>
                                                             </select>
                                                         </div>
                                                     </div>
-                                                    <!--/span-->
-                                                    <div class="col-md-6">
-                                                        <br>
-                                                        <br>
-                                                        <input type="hidden" id="hiddenCheckbox" name="popularDish" value="no">
-                                                        <input type="checkbox" id="checkbox" name="popularDish" value="yes">
-                                                        <label for="checkbox">make it one of popular dishes</label>
-                                                    </div>
                                                 </div>
-                                                <!--/row-->
                                             </div>
                                     </div>
                                     <div class="form-actions">

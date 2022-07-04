@@ -13,7 +13,6 @@
     <link href="<?Php echo $css ?>helper.css" rel="stylesheet">
     <link href="<?Php echo $css ?>style.css" rel="stylesheet">
     <link href="<?Php echo $css ?>update_order.css" rel="stylesheet">
-    <link rel="stylesheet" href="<?Php echo $css ?>login.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <!-- font awesome -->
     <script src="https://kit.fontawesome.com/4d6dd7bf1f.js" crossorigin="anonymous"></script>
@@ -28,4 +27,3 @@
     <script src="https:**oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 <![endif]-->
 </head>
-
