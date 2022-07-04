@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <?php
-include("../connection/connect.php");
 //error_reporting(0);
 $message = null;
 $success = null;
@@ -53,25 +52,10 @@ if (isset($_POST['submit1'])) {
 		}
 	}
 }
+include "init.php";
 ?>
 
-<head>
-	<meta charset="UTF-8">
-	<title>Admin login</title>
-
-
-	<link rel='stylesheet prefetch' href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900'>
-	<link rel='stylesheet prefetch' href='https://fonts.googleapis.com/css?family=Montserrat:400,700'>
-	<link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css'>
-
-	<link rel="stylesheet" href="css/login.css">
-
-
-</head>
-
 <body>
-
-
 	<div class="container">
 		<div class="info">
 			<h1>Administration </h1><span> login Account</span>
