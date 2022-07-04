@@ -6,12 +6,12 @@ if (empty($_SESSION["adm_id"])) {
     header('location:index.php');
     exit();
 } else {
+    $pageTitle = "Order";
     include "init.php";
 
     $do =  isset($_GET["do"]) ? $_GET["do"] : "order";
     if ($do == "order") {
 ?>
-
         <body class="fix-header fix-sidebar">
             <!-- Preloader - style you can find in spinners.css -->
             <div class="preloader">
@@ -58,7 +58,6 @@ if (empty($_SESSION["adm_id"])) {
                                                         <th>status</th>
                                                         <th>Reg-Date</th>
                                                         <th>Action</th>
-
                                                     </tr>
                                                 </thead>
                                                 <tbody>
@@ -75,11 +74,11 @@ if (empty($_SESSION["adm_id"])) {
                                                     ?>
                                                             <?php
                                                             echo ' <tr>
-																					            <td>' . $rows['username'] . '</td>
-																								<td>' . $rows['title'] . '</td>
-																								<td>' . $rows['quantity'] . '</td>
-																								<td>RM' . $rows['price'] . '</td>
-																								<td>' . $rows['address'] . '</td>';
+																	<td>' . $rows['username'] . '</td>
+																	<td>' . $rows['title'] . '</td>
+																	<td>' . $rows['quantity'] . '</td>
+																	<td>RM' . $rows['price'] . '</td>
+																	<td>' . $rows['address'] . '</td>';
                                                             ?>
                                                             <?php
                                                             $status = $rows['status'];

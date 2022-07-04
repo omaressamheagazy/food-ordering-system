@@ -4,6 +4,8 @@
 //error_reporting(0);
 $message = null;
 $success = null;
+$pageTitle = "login";
+include "init.php";
 session_start();
 if (isset($_POST['submit'])) {
 	$username = $_POST['username'];
@@ -22,7 +24,6 @@ if (isset($_POST['submit'])) {
 		}
 	}
 }
-
 if (isset($_POST['submit1'])) {
 	if (
 		empty($_POST['cr_user']) ||
@@ -52,7 +53,6 @@ if (isset($_POST['submit1'])) {
 		}
 	}
 }
-include "init.php";
 ?>
 
 <body>

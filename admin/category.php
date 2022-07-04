@@ -6,15 +6,14 @@ if (empty($_SESSION["adm_id"])) {
     header('location:index.php');
     exit();
 } else {
+    $pageTitle = "Category";
     include "init.php";
 
     $do =  isset($_GET["do"]) ? $_GET["do"] : "category";
     $error = null;
     $success = null;
-
     if ($do == "category") {
 ?>
-
         <body class="fix-header fix-sidebar">
             <!-- Preloader - style you can find in spinners.css -->
             <div class="preloader">
@@ -66,8 +65,6 @@ if (empty($_SESSION["adm_id"])) {
                                                     </tr>
                                                 </tfoot>
                                                 <tbody>
-
-
                                                     <?php
                                                     $sql = "SELECT * FROM category order by id desc";
                                                     $query = mysqli_query($db, $sql);

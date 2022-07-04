@@ -7,18 +7,17 @@
     <meta name="author" content="">
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="images/nasiIcon.png">
-    <title>Nasi Kurabu</title>
+    <title><?php getPageTitle() ?></title>
     <!-- Bootstrap Core CSS -->
     <link href="<?Php echo $css ?>lib/bootstrap/bootstrap.min.css" rel="stylesheet">
     <!-- Custom CSS -->
     <link href="<?Php echo $css ?>helper.css" rel="stylesheet">
     <link href="<?Php echo $css ?>style.css" rel="stylesheet">
     <link href="<?Php echo $css ?>update_order.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/4d6dd7bf1f.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="<?Php echo $css ?>login.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <!-- font awesome -->
-    <script src="https://kit.fontawesome.com/4d6dd7bf1f.js" crossorigin="anonymous"></script>
-    <title>Admin login</title>
     <link rel='stylesheet prefetch' href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900'>
     <link rel='stylesheet prefetch' href='https://fonts.googleapis.com/css?family=Montserrat:400,700'>
     <link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css'>

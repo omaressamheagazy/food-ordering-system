@@ -6,6 +6,7 @@ if (empty($_SESSION["adm_id"])) {
     header('location:index.php');
     exit();
 } else {
+    $pageTitle = "Dish";
     include "init.php";
 
     $do =  isset($_GET["do"]) ? $_GET["do"] : "dish";

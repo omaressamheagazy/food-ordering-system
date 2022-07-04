@@ -6,6 +6,8 @@ if (empty($_SESSION["adm_id"])) {
     header('location:index.php');
     exit();
 } else {
+
+$pageTitle = "Users";
 include "init.php";
 $error = "";
 $success = "";
