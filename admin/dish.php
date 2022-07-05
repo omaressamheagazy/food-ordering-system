@@ -145,11 +145,7 @@ if (empty($_SESSION["adm_id"])) {
 																<strong>Max Image Size is 1024kb!</strong> Try different Image.
 															</div>';
                     } else {
-
-
-
-
-                        $sql = "update dishes set rs_id='$_POST[res_name]',title='$_POST[d_name]',slogan='$_POST[about]',price='$_POST[price]',img='$fnew' where d_id='$_GET[menu_upd]'";  // update the submited data ino the database :images
+                        $sql = "update dishes set cat_id='$_POST[res_name]',title='$_POST[d_name]',favourite='$_POST[popularDish]',slogan='$_POST[about]',price='$_POST[price]',img='$fnew' where d_id='$_GET[menu_upd]'";  // update the submited data ino the database :images
                         mysqli_query($db, $sql);
                         move_uploaded_file($temp, $store);
 
@@ -172,10 +168,10 @@ if (empty($_SESSION["adm_id"])) {
                 </div>
                 <!-- Main wrapper  -->
                 <div id="main-wrapper">
-                    <!-- navbar -->
+                    <!-- header header  -->
                     <?php include "{$tpl}navbar.php" ?>
-                    <!-- End header header -->
-                    <?php include "{$tpl}sidebar.php" ?>
+                    <!-- Left Sidebar  -->
+                    <?php include "{$tpl}sidebar.php"; ?>
                     <!-- End Left Sidebar  -->
                     <!-- Page wrapper  -->
                     <div class="page-wrapper" style="height:1200px;">
@@ -184,26 +180,23 @@ if (empty($_SESSION["adm_id"])) {
                             <div class="col-md-5 align-self-center">
                                 <h3 class="text-primary">Dashboard</h3>
                             </div>
-                            <div class="col-md-7 align-self-center">
-                                <ol class="breadcrumb">
-                                    <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
-                                    <li class="breadcrumb-item active">Dashboard</li>
-                                </ol>
-                            </div>
+
                         </div>
                         <!-- End Bread crumb -->
                         <!-- Container fluid  -->
                         <div class="container-fluid">
                             <!-- Start Page Content -->
+
+
                             <?php echo $error;
                             echo $success; ?>
                             <div class="col-lg-12">
                                 <div class="card card-outline-primary">
                                     <div class="card-header">
-                                        <h4 class="m-b-0 text-white">Add Menu to Restaurant</h4>
+                                        <h4 class="m-b-0 text-white">Update the dish</h4>
                                     </div>
                                     <div class="card-body">
-                                        <form action='' method='post' enctype="multipart/form-data">
+                                        <form action='' method='post' enctype="multipart/form-data" class="mainForm">
                                             <div class="form-body">
                                                 <?php $qml = "select * from dishes where d_id='$_GET[menu_upd]'";
                                                 $rest = mysqli_query($db, $qml);
@@ -243,25 +236,32 @@ if (empty($_SESSION["adm_id"])) {
                                                     </div>
                                                 </div>
                                                 <!--/row-->
-
-                                                <!--/span-->
-                                                <div class="row">
-                                                    <div class="col-md-12">
+                                                <!--/row-->
+                                                <div class="row p-t-20">
+                                                    <div class="col-md-6">
                                                         <div class="form-group">
                                                             <label class="control-label">Select Category</label>
                                                             <select name="res_name" class="form-control custom-select" data-placeholder="Choose a Category" tabindex="1">
                                                                 <option>--Select Category--</option>
-                                                                <?php $ssql = "select * from restaurant";
+                                                                <?php $ssql = "select * from category";
                                                                 $res = mysqli_query($db, $ssql);
                                                                 while ($row = mysqli_fetch_array($res)) {
-                                                                    echo ' <option value="' . $row['rs_id'] . '">' . $row['title'] . '</option>';;
+                                                                    echo ' <option value="' . $row['id'] . '">' . $row['title'] . '</option>';;
                                                                 }
-
                                                                 ?>
                                                             </select>
                                                         </div>
                                                     </div>
+                                                    <!--/span-->
+                                                    <div class="col-md-6">
+                                                        <br>
+                                                        <br>
+                                                        <input type="hidden" id="hiddenCheckbox" name="popularDish" value="no">
+                                                        <input type="checkbox" id="checkbox" name="popularDish" value="yes">
+                                                        <label for="checkbox">make it one of popular dishes</label>
+                                                    </div>
                                                 </div>
+                                                <!--/row-->
                                             </div>
                                     </div>
                                     <div class="form-actions">
@@ -272,11 +272,11 @@ if (empty($_SESSION["adm_id"])) {
                                 </div>
                             </div>
                         </div>
+
                     </div>
                     <!-- End PAge Content -->
                 </div>
                 <!-- End Container fluid  -->
-                <!-- footer -->
             <?php include "{$tpl}footer.php";
         } elseif ($do == "add") {
             if (isset($_POST['submit']))           //if upload btn is pressed
@@ -304,7 +304,7 @@ if (empty($_SESSION["adm_id"])) {
 																<strong>Max Image Size is 1024kb!</strong> Try different Image.
 															</div>';
                         } else {
-                            $sql = "INSERT INTO dishes(id,title,favourite,slogan,price,img) VALUE('" . $_POST['res_name'] . "','" . $_POST['d_name'] . "','" . $_POST['popularDish'] .  "','" . $_POST['about'] . "','" . $_POST['price'] . "','" . $fnew . "')";  // store the submited data ino the database :images
+                            $sql = "INSERT INTO dishes(cat_id,title,favourite,slogan,price,img) VALUE('" . $_POST['res_name'] . "','" . $_POST['d_name'] . "','" . $_POST['popularDish'] .  "','" . $_POST['about'] . "','" . $_POST['price'] . "','" . $fnew . "')";  // store the submited data ino the database :images
                             mysqli_query($db, $sql);
                             move_uploaded_file($temp, $store);
 

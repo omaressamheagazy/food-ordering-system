@@ -292,7 +292,6 @@ if (empty($_SESSION["adm_id"])) {
                     }
                 }
             }
-            include "init.php";
             ?>
 
                 <body class="fix-header">
