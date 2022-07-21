@@ -2,15 +2,14 @@
 
 ## About this project?
 
-This project is about ordering online food from your local restaurants. Anybody can create an account and order online. you are free to to use this project for college or school purposes. Please note that this project is not made for business or commercial purposes.
+This project is about ordering online food from your local restaurants. Anybody can create an account and order online. 
 
-![Front view](.gitbook/assets/1.png)
+To see preview of this project: http://onlinerestaurant.infinityfreeapp.com
 
-![Backend view](.gitbook/assets/2.png)
 
 ## Installation or Demo
 
-Just create new database in phpmyadmin and import SQL file which is located in `SQL/` directory. If you don't know, how to setup this project on your localhost then watch this youtube video: [https://youtu.be/aBiIgUhe0Jk](https://youtu.be/aBiIgUhe0Jk)
+Just create new database in phpmyadmin and import SQL file which is located in `SQL/` directory. 
 
 ## Admin Dashboard
 
@@ -18,19 +17,23 @@ To access admin portal type this in your URL BAR **\`root**/admin/ \`  where **r
 
  **Admin credentials:** Username: **admin** Password: **1234**
 
+
+## Customer view 
+To access cutomer profile you can use:
+ **Customer credentials:** Username: **omar** Password: **123456**
+
 ## Technologies Used
 
-1. PHP
-2. SQL
-3. BOOTSTRAP 4
-4. AJAX
-5. JQUERY
+PHP
+MySQL
+BOOTSTRAP
+Javascript
+HTML 
+CSS
+JQUERY
 
 ## System Requirements
 
 Software : XAMPP / Wamp / Mamp/ Lamp \(anyone\).
 
-## Want custom PHP project?
-
-If you looking for specific project for your school or college then follow me on intagram and message me there. [https://www.instagram.com/code\_lone/](https://www.instagram.com/code_lone/)
 
